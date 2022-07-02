@@ -44,6 +44,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
+            this.txtRapor = new System.Windows.Forms.TextBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBaslangic.CalendarTimeProperties)).BeginInit();
@@ -123,9 +125,9 @@
             // 
             this.btnSifirla.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSifirla.Appearance.Options.UseFont = true;
-            this.btnSifirla.Location = new System.Drawing.Point(12, 257);
+            this.btnSifirla.Location = new System.Drawing.Point(12, 317);
             this.btnSifirla.Name = "btnSifirla";
-            this.btnSifirla.Size = new System.Drawing.Size(279, 29);
+            this.btnSifirla.Size = new System.Drawing.Size(171, 29);
             this.btnSifirla.TabIndex = 6;
             this.btnSifirla.Text = "Sıfırla";
             this.btnSifirla.Click += new System.EventHandler(this.btnSifirla_Click);
@@ -198,18 +200,37 @@
             // 
             this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRaporla.Appearance.Options.UseFont = true;
-            this.btnRaporla.Location = new System.Drawing.Point(12, 160);
+            this.btnRaporla.Location = new System.Drawing.Point(12, 220);
             this.btnRaporla.Name = "btnRaporla";
             this.btnRaporla.Size = new System.Drawing.Size(279, 29);
             this.btnRaporla.TabIndex = 14;
             this.btnRaporla.Text = "Raporla";
             this.btnRaporla.Click += new System.EventHandler(this.btnRaporla_Click);
             // 
+            // txtRapor
+            // 
+            this.txtRapor.Location = new System.Drawing.Point(92, 192);
+            this.txtRapor.Name = "txtRapor";
+            this.txtRapor.Size = new System.Drawing.Size(199, 22);
+            this.txtRapor.TabIndex = 15;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(12, 196);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(62, 18);
+            this.labelControl5.TabIndex = 16;
+            this.labelControl5.Text = "Rapor Adı";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 780);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.txtRapor);
             this.Controls.Add(this.btnRaporla);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -255,6 +276,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btnRaporla;
+        private System.Windows.Forms.TextBox txtRapor;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }
 

@@ -44,6 +44,7 @@ namespace StokApp.FormUI
         {
             txtKod.Text = cBxUrunKod.Text;
         }
+
         /// <summary>
         /// Calender başlangIçtan başlangıç tarihi seçilmesi için
         /// </summary>
@@ -56,6 +57,7 @@ namespace StokApp.FormUI
             txtBaslangic.Text = DateSplit(gelenTarih).ToString();
             baslocal = txtBaslangic.Text;
         }
+
         /// <summary>
         /// Calender bitişten son tarihi seçilmesi için
         /// </summary>
@@ -220,9 +222,15 @@ namespace StokApp.FormUI
             txtBitis.Text = "Bitiş Tarihi";
         }
 
+        /// <summary>
+        /// Raporlama için kullanılan devexpress provider
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRaporla_Click(object sender, EventArgs e)
         {
-            string path = "output.xlsx";
+            var isim = txtRapor.Text;
+            string path = isim + ".xlsx";
             gridControl1.ExportToXlsx(path);
             // Open the created XLSX file with the default application.
             Process.Start(path);
