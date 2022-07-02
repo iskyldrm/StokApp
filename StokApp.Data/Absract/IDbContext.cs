@@ -9,7 +9,7 @@ namespace StokApp.Data.Absract
 {
     public interface IDbContext
     {
-        int _conStr { get; set; }
+        string _conStr { get; set; }
         /// <summary>
         /// Sql bağlantı durumunu bildirir.
         /// </summary>
