@@ -1,0 +1,37 @@
+﻿CREATE proc [dbo].[sp_InOutTable]
+(
+	--Form Uygulamasında gelecek olan ınputları karşılayacak değişkenler
+	@Malkodu varchar(30),
+	@BaslangıcT int,
+	@BitisT int
+)
+as
+begin
+	Select ROW_NUMBER() OVER (ORDER BY Tarih) as SıraNo,                      --Gelecek verilerin sıralanması için Tarih columa göre satır no ekleme
+	    case islemTur When 0 then 'Giris' When 1 then 'Cikis' end ,           --Case işlemi ile işlemtur columunda gelen değere göre Giris Cikis yazdırıldı
+	    EvrakNo,															  --EvrakNo Eklendi
+	    CONVERT(VARCHAR(15), CAST(STI.Tarih - 2 AS datetime), 104) as Tarih,  --Gelen Kod ile okunanda int değeri datetime convert edildi 
+	    case islemTur When 0 then Miktar when 1 then 0 end as GirisMiktari,   --İslem tur göre değer ya miktar olarak yazdırıldı yada 0 yazdırıldı
+	    case islemTur When 0 then 0 when 1 then miktar  end  as CikisMiktari, --İslem tur göre değer ya miktar olarak yazdırıldı yada 0 yazdırıldı
+	    (case islemTur When 0 then Miktar when 1 then 0 end)                  --
+	    -(case islemTur When 0 then 0 when 1 then miktar end ) as StokMiktari --StokMiktarı Gelen miktarın türüne göre toplanıp stok colonuna yazdırıldı.
+    from STI Where MalKodu=@Malkodu and Tarih between @BaslangıcT and @BitisT --Prosedure koşulları
+end
+
+
+
+CREATE proc [dbo].[sp_InOutTableNoParam]
+
+as
+begin
+Select ROW_NUMBER() OVER (
+	ORDER BY Tarih
+   ) as SıraNo, case islemTur When 0 then 'Giris' When 1 then 'Cikis' end ,
+EvrakNo,
+CONVERT(VARCHAR(15), CAST(STI.Tarih - 2 AS datetime), 104) as Tarih,
+case islemTur When 0 then Miktar when 1 then 0 end as GirisMiktari,
+case islemTur When 0 then 0 when 1 then miktar  end  as CikisMiktari,
+(case islemTur When 0 then Miktar when 1 then 0 end) -(case islemTur When 0 then 0 when 1 then miktar  end  ) as StokMiktari
+from STI --WHERE ŞARTI VEYA PARAMETRE YAZILMADAN TÜM TABLO GEİTİRLDİ
+
+end

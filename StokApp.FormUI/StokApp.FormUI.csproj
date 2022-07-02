@@ -98,5 +98,10 @@
       <Name>StokApp.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AppData\DataScript.txt" />
+    <Content Include="AppData\StoredProcedures.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
