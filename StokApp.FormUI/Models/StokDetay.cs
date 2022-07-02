@@ -17,4 +17,4 @@ namespace StokApp.FormUI.Models
         public int Stok { get; set; }
     }
 }
-}
+

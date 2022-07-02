@@ -17,7 +17,7 @@ namespace StokApp.Data.Concrete
 
         // 2. Nesne SqlCommand Nesnesi
         public SqlCommand cmd;
-        public string _conStr { get; set; } = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
+        public string _conStr = @"Data Source = (localdb)\MSSQLLocalDB;Initial Catalog = Test; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         /// <summary>
         /// Sql data connection sağlar. Bağlantı adresi girilirse girilen adresren bağlantı açar.

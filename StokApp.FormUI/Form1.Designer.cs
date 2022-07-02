@@ -55,7 +55,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 355);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1110, 413);
+            this.gridControl1.Size = new System.Drawing.Size(1148, 413);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -73,6 +73,7 @@
             this.calendarBaslangic.Name = "calendarBaslangic";
             this.calendarBaslangic.Size = new System.Drawing.Size(294, 282);
             this.calendarBaslangic.TabIndex = 1;
+            this.calendarBaslangic.SelectionChanged += new System.EventHandler(this.calendarBaslangic_SelectionChanged);
             // 
             // calendarBitis
             // 
@@ -82,6 +83,7 @@
             this.calendarBitis.Name = "calendarBitis";
             this.calendarBitis.Size = new System.Drawing.Size(294, 282);
             this.calendarBitis.TabIndex = 2;
+            this.calendarBitis.SelectionChanged += new System.EventHandler(this.calendarBitis_SelectionChanged);
             // 
             // cBxUrunKod
             // 
@@ -91,6 +93,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cBxUrunKod.Size = new System.Drawing.Size(279, 22);
             this.cBxUrunKod.TabIndex = 3;
+            this.cBxUrunKod.SelectedIndexChanged += new System.EventHandler(this.cBxUrunKod_SelectedIndexChanged);
             // 
             // UrunKodulbl
             // 
@@ -108,11 +111,12 @@
             this.btnCalistir.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnCalistir.Appearance.Options.UseFont = true;
             this.btnCalistir.Appearance.Options.UseForeColor = true;
-            this.btnCalistir.Location = new System.Drawing.Point(12, 125);
+            this.btnCalistir.Location = new System.Drawing.Point(12, 107);
             this.btnCalistir.Name = "btnCalistir";
-            this.btnCalistir.Size = new System.Drawing.Size(279, 29);
+            this.btnCalistir.Size = new System.Drawing.Size(279, 47);
             this.btnCalistir.TabIndex = 5;
             this.btnCalistir.Text = "Çalıştır";
+            this.btnCalistir.Click += new System.EventHandler(this.btnCalistir_Click);
             // 
             // btnSifirla
             // 
@@ -123,6 +127,7 @@
             this.btnSifirla.Size = new System.Drawing.Size(279, 29);
             this.btnSifirla.TabIndex = 6;
             this.btnSifirla.Text = "Sıfırla";
+            this.btnSifirla.Click += new System.EventHandler(this.btnSifirla_Click);
             // 
             // labelControl1
             // 
@@ -140,6 +145,7 @@
             this.txtKod.Name = "txtKod";
             this.txtKod.Size = new System.Drawing.Size(182, 22);
             this.txtKod.TabIndex = 8;
+            this.txtKod.Text = "Ürün Kodu";
             // 
             // txtBaslangic
             // 
@@ -147,6 +153,7 @@
             this.txtBaslangic.Name = "txtBaslangic";
             this.txtBaslangic.Size = new System.Drawing.Size(294, 22);
             this.txtBaslangic.TabIndex = 9;
+            this.txtBaslangic.Text = "Başlangıç Tarihi";
             // 
             // txtBitis
             // 
@@ -154,6 +161,7 @@
             this.txtBitis.Name = "txtBitis";
             this.txtBitis.Size = new System.Drawing.Size(294, 22);
             this.txtBitis.TabIndex = 10;
+            this.txtBitis.Text = "Bitiş Tarihi";
             // 
             // labelControl2
             // 
@@ -189,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 780);
+            this.ClientSize = new System.Drawing.Size(1172, 780);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);

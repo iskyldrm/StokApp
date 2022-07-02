@@ -9,7 +9,6 @@ namespace StokApp.Data.Absract
 {
     public interface IDbContext
     {
-        string _conStr { get; set; }
         /// <summary>
         /// Sql bağlantı durumunu bildirir.
         /// </summary>
@@ -43,6 +42,6 @@ namespace StokApp.Data.Absract
         /// </summary>
         /// <param name="sql">Sql sorgusu</param>
         /// <returns></returns>
-        SqlDataReader ExecuteQuery(string sql)
+        SqlDataReader ExecuteQuery(string sql);
     }
 }
