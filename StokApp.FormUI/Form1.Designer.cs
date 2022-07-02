@@ -43,6 +43,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarBaslangic.CalendarTimeProperties)).BeginInit();
@@ -122,7 +123,7 @@
             // 
             this.btnSifirla.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSifirla.Appearance.Options.UseFont = true;
-            this.btnSifirla.Location = new System.Drawing.Point(12, 187);
+            this.btnSifirla.Location = new System.Drawing.Point(12, 257);
             this.btnSifirla.Name = "btnSifirla";
             this.btnSifirla.Size = new System.Drawing.Size(279, 29);
             this.btnSifirla.TabIndex = 6;
@@ -193,11 +194,23 @@
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "Ürün Kodu ";
             // 
+            // btnRaporla
+            // 
+            this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRaporla.Appearance.Options.UseFont = true;
+            this.btnRaporla.Location = new System.Drawing.Point(12, 160);
+            this.btnRaporla.Name = "btnRaporla";
+            this.btnRaporla.Size = new System.Drawing.Size(279, 29);
+            this.btnRaporla.TabIndex = 14;
+            this.btnRaporla.Text = "Raporla";
+            this.btnRaporla.Click += new System.EventHandler(this.btnRaporla_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 780);
+            this.Controls.Add(this.btnRaporla);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -241,6 +254,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton btnRaporla;
     }
 }
 

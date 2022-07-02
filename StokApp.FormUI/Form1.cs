@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -217,6 +218,14 @@ namespace StokApp.FormUI
             txtKod.Text = "Mal Kodu";
             txtBaslangic.Text = "Başlangıç Tarihi";
             txtBitis.Text = "Bitiş Tarihi";
+        }
+
+        private void btnRaporla_Click(object sender, EventArgs e)
+        {
+            string path = "output.xlsx";
+            gridControl1.ExportToXlsx(path);
+            // Open the created XLSX file with the default application.
+            Process.Start(path);
         }
     }
 }
