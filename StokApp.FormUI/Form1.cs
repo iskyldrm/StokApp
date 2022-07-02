@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StokApp.Data.Absract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace StokApp.FormUI
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly IDbContext dbContext;
+
+        public Form1(IDbContext dbContext)
         {
             InitializeComponent();
+            this.dbContext = dbContext;
         }
+        
+        
     }
 }
