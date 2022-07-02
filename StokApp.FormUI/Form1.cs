@@ -18,7 +18,6 @@ namespace StokApp.FormUI
     {
         List<StokDetay> Detays = new List<StokDetay>();
         List<UrunKod> eCodes = new List<UrunKod>();
-        StringBuilder sql = new StringBuilder();
         string baslocal = "";
         string sonlocal = "";
         private readonly IDbContext dbContext = new SqlDbContext();
@@ -35,12 +34,20 @@ namespace StokApp.FormUI
         }
 
         
-
+        /// <summary>
+        /// Comboboxdan kod seçildiğinde kod textine ürün yazması için
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cBxUrunKod_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtKod.Text = cBxUrunKod.Text;
         }
-
+        /// <summary>
+        /// Calender başlangIçtan başlangıç tarihi seçilmesi için
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void calendarBaslangic_SelectionChanged(object sender, EventArgs e)
         {
             var gelenTarih = calendarBaslangic.SelectionStart.ToString();
@@ -48,6 +55,11 @@ namespace StokApp.FormUI
             txtBaslangic.Text = DateSplit(gelenTarih).ToString();
             baslocal = txtBaslangic.Text;
         }
+        /// <summary>
+        /// Calender bitişten son tarihi seçilmesi için
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void calendarBitis_SelectionChanged(object sender, EventArgs e)
         {
             var gelenTarih = calendarBitis.SelectionStart.ToString();
@@ -63,10 +75,26 @@ namespace StokApp.FormUI
         /// <returns></returns>
         private StringBuilder DateSplit(string date)
         {
-            var deger = date.Split('.');
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(deger[0] + "." + deger[1] + "." + deger[2].Substring(0, 4));
-            return stringBuilder;
+            try
+            {
+                var deger = date.Split('.');
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.Append(deger[0] + "." + deger[1] + "." + deger[2].Substring(0, 4));
+                return stringBuilder;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Format Hatası" + ex.Message);
+            }
+            finally
+            {
+                RefreshMainTable();
+                RefreshCombo();
+            }
+            return null;
+            
         }
 
         /// <summary>
@@ -134,6 +162,11 @@ namespace StokApp.FormUI
 
         }
 
+        /// <summary>
+        /// Çalıştır butonuna basınca filtrelere göre sp_InOuttable prosedürünü çalıştırır.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCalistir_Click(object sender, EventArgs e)
         {
             var bas = Convert.ToDateTime(baslocal);
@@ -171,7 +204,11 @@ namespace StokApp.FormUI
             // Listemizi datagrid'e basiyoruz
             gridControl1.DataSource = Detays.ToList();
         }
-
+        /// <summary>
+        /// Sıfırla butonuna basınca  Textleri temizler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSifirla_Click(object sender, EventArgs e)
         {
             RefreshCombo();
