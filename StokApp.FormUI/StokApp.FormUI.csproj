@@ -101,6 +101,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="AppData\DataScript.txt" />
+    <Content Include="AppData\img\1.png" />
+    <Content Include="AppData\img\2.png" />
+    <Content Include="AppData\img\3.png" />
+    <Content Include="AppData\img\4.png" />
     <Content Include="AppData\StoredProcedures.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
