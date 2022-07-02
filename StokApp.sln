@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokApp.Data", "StokApp.Data\StokApp.Data.csproj", "{8EC5A86E-AE95-4C10-88B9-28873CA1EAE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokApp.FormUI", "StokApp.FormUI\StokApp.FormUI.csproj", "{0B6492D2-B408-47F1-9712-4275D7C8FB0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8EC5A86E-AE95-4C10-88B9-28873CA1EAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EC5A86E-AE95-4C10-88B9-28873CA1EAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EC5A86E-AE95-4C10-88B9-28873CA1EAE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B6492D2-B408-47F1-9712-4275D7C8FB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6492D2-B408-47F1-9712-4275D7C8FB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6492D2-B408-47F1-9712-4275D7C8FB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6492D2-B408-47F1-9712-4275D7C8FB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

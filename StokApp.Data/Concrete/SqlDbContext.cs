@@ -71,12 +71,9 @@ namespace StokApp.Data.Concrete
         {
             cmd = new SqlCommand("sp_InOutTable", sqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            SqlParameter malKodu = new SqlParameter { ParameterName = "@Malkodu", SqlDbType = SqlDbType.VarChar, Value = malKod, Direction = ParameterDirection.Input };
-            SqlParameter baslangıcT = new SqlParameter { ParameterName = "@BaslangıcT", SqlDbType = SqlDbType.VarChar, Value = baslangıc, Direction = ParameterDirection.Input };
-            SqlParameter bitisT = new SqlParameter { ParameterName = "@BitisT", SqlDbType = SqlDbType.VarChar, Value = bitis, Direction = ParameterDirection.Input };
-            cmd.Parameters.Add(malKodu);
-            cmd.Parameters.Add(baslangıcT);
-            cmd.Parameters.Add(bitisT);
+            cmd.Parameters.AddWithValue("@Malkodu", malKod);
+            cmd.Parameters.AddWithValue("@BaslangıcT", baslangıc);
+            cmd.Parameters.AddWithValue("@BitisT", bitis);
             return cmd.ExecuteReader();
         }
 
